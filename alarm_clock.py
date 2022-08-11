@@ -18,3 +18,19 @@
 #2. Call the alarm clock’s change time method to change the time
 
 #3. Toggle the alarm clock’s on off switch
+
+class AlarmClock:
+
+    def __init__(self, current_time, alarm_status, alarm_time):
+        self.current_time = current_time
+        self.alarm_status = alarm_status
+        self.alarm_time = alarm_time
+
+    def set_time(self):
+        self.alarm_time = input("Please input the current time (Ex 12:00). ")
+
+    def set_alarm(self, current_time):
+        self.alarm_time = input("Please input the time of your alarm (Ex 12:00). ")
+        self.alarm_status = True
+        print(f"It is currently {self.current_time}, this alarm will go off at {self.alarm_time} ")
+        
