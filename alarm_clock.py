@@ -30,10 +30,21 @@ class AlarmClock:
         self.current_time = input("Please input the current time (Ex 12:00). ")
 
     def toggle_alarm(self):
+        chk = False
         if self.alarm_status == True:
-            self.alarm_status = False
+            while chk == False:
+                question = input("Would you like to turn off the alarm? y/n ")
+                if question == 'y':
+                    #self.toggle_alarm()
+                    self.alarm_status = False
+                    chk = True
+                elif question == 'n':
+                    print(f"Alarm is still set for {self.alarm_time}")
+                    chk = True
+                else:
+                    print("Invalid input. Try again")
         else:
-            self.alarm_status = True
+            self.set_alarm(self.current_time)
 
     def set_alarm(self, current_time):
         self.alarm_time = input("Please input the time of your alarm (Ex 12:00). ")
