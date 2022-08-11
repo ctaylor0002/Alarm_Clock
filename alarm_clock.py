@@ -27,10 +27,16 @@ class AlarmClock:
         self.alarm_time = alarm_time
 
     def set_time(self):
-        self.alarm_time = input("Please input the current time (Ex 12:00). ")
+        self.current_time = input("Please input the current time (Ex 12:00). ")
+
+    def toggle_alarm(self):
+        if self.alarm_status == True:
+            self.alarm_status = False
+        else:
+            self.alarm_status = True
 
     def set_alarm(self, current_time):
         self.alarm_time = input("Please input the time of your alarm (Ex 12:00). ")
-        self.alarm_status = True
+        self.alarm_status = True    #This will allow the user to set an alarm without toggling first
         print(f"It is currently {self.current_time}, this alarm will go off at {self.alarm_time} ")
         
